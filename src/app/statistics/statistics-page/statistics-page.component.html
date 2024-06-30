@@ -1,0 +1,27 @@
+<p>statistics-page works!</p>
+
+<!-- Sense lazy loading i defer -->
+<!-- <div class="statistics-container">
+  <app-resume-data class="statistic-block" defer></app-resume-data>
+  <app-gender class="statistic-block" defer></app-gender>
+  <app-general-results class="statistic-block" defer></app-general-results>
+</div> -->
+
+<!-- Defer i carrega dels components visibles a la vista -->
+<div class="statistics-container">
+  <div class="statistic-block" deferLoad (deferLoad)="loadResumeData = true">
+    <ng-container *ngIf="loadResumeData">
+      <app-resume-data></app-resume-data>
+    </ng-container>
+  </div>
+  <div class="statistic-block" deferLoad (deferLoad)="loadGenderData = true">
+    <ng-container *ngIf="loadGenderData">
+      <app-gender></app-gender>
+    </ng-container>
+  </div>
+  <div class="statistic-block" deferLoad (deferLoad)="loadGeneralResults = true">
+    <ng-container *ngIf="loadGeneralResults">
+      <app-general-results></app-general-results>
+    </ng-container>
+  </div>
+</div>

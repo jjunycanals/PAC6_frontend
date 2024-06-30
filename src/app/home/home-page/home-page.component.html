@@ -1,0 +1,22 @@
+<div *ngIf="loading">Carregant dades...</div>
+<div *ngIf="!loading && students.length === 0">No hi ha alumnes disponibles.</div>
+<div *ngIf="!loading && students.length > 0">
+  <table>
+    <tr>
+      <th>ID</th>
+      <th>Nom</th>
+      <th>Cognoms</th>
+      <th>Gènere</th>
+      <th>Nota</th>
+      <th>Absències</th>
+    </tr>
+    <tr *ngFor="let student of students">
+      <td>{{ student.id }}</td>
+      <td>{{ student.name }}</td>
+      <td>{{ student.surname }}</td>
+      <td>{{ student.gender }}</td>
+      <td>{{ student.score < 5 ? 'Suspès' : 'Aprovat' }}</td>
+      <td>{{ student.absences }}</td>
+    </tr>
+  </table>
+</div>

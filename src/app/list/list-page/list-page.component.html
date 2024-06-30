@@ -1,0 +1,4 @@
+<p>list-page works!</p>
+<cdk-virtual-scroll-viewport itemSize="50" class="example-viewport">
+  <div *cdkVirtualFor="let student of students" class="example-item">{{ student.name }}</div>
+</cdk-virtual-scroll-viewport>
